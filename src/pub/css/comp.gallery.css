@@ -1,0 +1,81 @@
+.gallery {
+    display: none;
+
+    &:target {
+        display: flex;
+        flex-direction: row;
+
+        & figure {
+            flex: 1;
+            position: relative;
+            &:hover figcaption { opacity: 1 }
+            & img { max-width: 12em }
+            & figcaption {
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                padding: 1em;
+                position: absolute;
+                transition: all .3s;
+                background: var(--shd-d);
+                & b, q, i {
+                    color: var(--fg-a);
+                    font-family: var(--fnt-mono);
+                }
+            }
+        }
+    }
+}
+
+
+#t-screenshot:target {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+figure {
+    flex: 1;
+    position: relative;
+    width: 12em;
+}
+
+figure:hover figcaption {
+    opacity: 1;
+}
+
+figure img {
+    max-width: 12em;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+figure img.show {
+    max-width: 32em;
+    position: fixed;
+    z-index: 9;
+    left: 50%;
+    top: 8em;
+    margin-left: -16em;
+    filter:
+        grayscale(100%) contrast(1.25);
+}
+
+figcaption {
+    opacity: 0;
+    padding: 1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: var(--shd-d);
+    transition: all .3s;
+}
+
+figcaption b,
+figcaption q,
+figcaption i {
+    color: #fff;
+    font-family: var(--fnt-mono);
+}

@@ -1,0 +1,176 @@
+input, textarea {
+  padding: 0 1em;
+  line-height: 2;
+  color: var(--fg-b);
+  border: var(--brb);
+  border-radius: var(--small-a);
+  background-color: var(--bg-b);
+  transition: var(--trans-a);
+
+  &:focus {
+    border: var(--brc) }
+
+  &:hover {
+    border: var(--brd) }
+
+  &:not(:placeholder-shown) {
+    &:valid {
+      border-color: var(--ok-a) }
+
+    &:invalid {
+      border-color: var(--err-a) }}}
+
+
+form {
+  color: var(--fg-b);
+
+  & footer {
+    display         : flex;
+    height          : 4em;
+    padding         : 1em;
+    align-items     : center;
+    justify-content : space-between }
+
+  & header .title {
+      line-height    : 3;
+      padding        : 0 1em;
+      font-size      : 1.25em;
+      text-transform : capitalize }
+
+  & main {
+      box-shadow:
+        inset 0 1px 0 var(--br-a),
+        inset 0 -1px 0 var(--br-a) }
+
+  & blockquote {
+    margin      : 1em;
+    padding     : 1em;
+    font-style  : italic;
+    border-left : 4px solid var(--ok-a);
+    font-size   : 16px;
+    &.err {
+      border-left-color: var(--err-a) }
+
+    &:empty {
+      display: none }}
+
+  & fieldset {
+      padding     : 1em;
+      display     : flex;
+      align-items : center;
+      box-shadow  : inset 0 1px 0 var(--br-a);
+      &:last-child {
+          box-shadow:
+            inset 0 1px 0 var(--br-a),
+            inset 0 -1px 0 var(--br-a) }
+
+      & label {
+          flex        : 1;
+          padding     : 0 1em;
+          line-height : 2;
+          text-align  : right;
+          & + input, & + select {
+            flex: 3 }}}
+
+  & select {
+      cursor             : pointer;
+      appearance         : none;
+      padding            : 0 4em 0 1em;
+      display            : inline-block;
+      line-height        : 2em;
+      background-image   :
+        linear-gradient(45deg, transparent 50%, var(--br-b) 50%),
+        linear-gradient(135deg, var(--br-b) 50%, transparent 50%),
+        linear-gradient(to right, var(--br-b), var(--br-a));
+      background-position:
+        calc(100% - 1rem) 50%,
+        calc(100% - 0.7rem) 50%,
+        calc(100% - 2rem) 0;
+
+      background-size   : 5px 5px, 5px 5px, 1px 2rem;
+      background-repeat : no-repeat;
+      background-color  : var(--bg-b);
+      border-radius     : var(--small-a);
+      border            : var(--brb);
+      color             : var(--fg-b);
+
+      &:hover, &:focus {
+        border           : 1px solid var(--br-d);
+        background-image :
+          linear-gradient(45deg, transparent 50%, var(--br-d) 50%),
+          linear-gradient(135deg, var(--br-d) 50%, transparent 50%),
+          linear-gradient(to right, var(--br-d), var(--br-d)) }}}
+
+
+.radios {
+    padding       : 0;
+    overflow      : hidden;
+    display       : inline-block;
+    border-radius : var(--small-b);
+
+    & li {
+        display: flex;
+    }
+
+    & [type="radio"] {
+        /*
+
+        left     : -100vw;
+        top      : -100vh; */
+        position: absolute;
+        opacity: 0;
+    }
+
+    & label {
+        line-height : 2;
+        padding     : 0 2em 0 1em;
+    }
+
+    &:not(:focus-within) {
+
+        & input:not(:checked) + label {
+            height: 0;
+            position: absolute;
+        }
+
+        & input:checked+label {
+            border: var(--bra);
+            &::after {
+                content    : "⧨";
+                float      : right;
+                padding    : 0 1em;
+                margin     : 0 -2em 0 1em;
+                color      : var(--fg-a);
+                background : var(--bg-a);
+            }
+        }
+    }
+
+
+
+
+
+
+    &:focus-within input:checked + label {
+        color      : var(--warn-a);
+        background : var(--plum-d);
+    }
+}
+
+
+/*
+&:not(:focus-within) {
+    & input {
+        &:not(:checked)+label {
+            height: 0;
+        }
+
+        &:checked+label {
+            border: var(--bra);
+        }
+    }
+}
+
+
+
+*/

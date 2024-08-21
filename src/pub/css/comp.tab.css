@@ -1,0 +1,44 @@
+.tabs {
+  display: flex;
+  height: calc(100% - 4em);
+  flex-direction: column;
+
+  & nav {
+    display: flex;
+    border-bottom: 1px solid var(--br-a);
+    position: relative;
+    z-index: 9;
+
+    & a {
+      line-height: 4;
+      padding: 0 2em;
+      &.active {
+        border: 1px solid var(--br-a);
+        border-bottom: 0;
+        box-shadow: 0 1px 0 var(--bg-b);
+      }
+    }
+  }
+  & .tab {
+    display: none;
+    &:target {
+      display: block;
+      border: 1px solid var(--br-a);
+      border-top: 0;
+      padding: 1em;
+      min-height: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+/*
+  Time Clocks and the Ordering of Events in a Distributed System.
+
+  Time Clocks - Event Ordering in a Distributed System
+*/

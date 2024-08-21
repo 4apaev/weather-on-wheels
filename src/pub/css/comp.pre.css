@@ -1,0 +1,16 @@
+pre {
+
+    border-radius : var(--small-b);
+    background    : var(--bg-b);
+    border        : var(--bra);
+    color         : var(--fg-b);
+    transition    : var(--trans-b);
+    font-family   : var(--fnt-mono);
+    overflow-y    : auto;
+    overflow      : hidden;
+    min-height    : 2em;
+    margin        : 1em;
+    padding       : 1em;
+    &:focus {
+        outline: none;
+        background-color: var(--bg-c) }}

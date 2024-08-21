@@ -1,0 +1,25 @@
+{
+    "name"       : "weather-on-wheels",
+    "author"     : "Michael Miretsky",
+    "version"    : "0.0.1",
+    "license"    : "MIT",
+    "type"       : "module",
+    "main"       : "src/index.js",
+    "repository" : "github:4apaev/weather-on-wheels",
+    "scripts"    : {
+        "version": "sed 's/\\=.*/=/g;s/\\#.*//g' ./.env > ./.env.example",
+        "start": "node --env-file=./.env  src/index.js",
+        "serve": "node --env-file=./.env  src/index.js 2>&1 > out.log &",
+        "migrate": "node --env-file=./.env  src/db/migrate.js",
+        "watch": "node --env-file=./.env  --watch-path=./src",
+        "test": "node --env-file=./.env  --experimental-test-coverage --test test/*.spec.js"
+    },
+    "dependencies": {
+        "pg": "^8.12.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.14.2",
+        "@types/pg": "^8.11.6",
+        "eslint": "^8.57.0"
+    }
+}

@@ -1,0 +1,121 @@
+a {
+    color: var(--info-b);
+    &:focus, &:hover {
+        color: var(--info-a);
+    }
+}
+
+button {
+    padding         : 0 1em;
+    line-height     : 2;
+    transition      : var(--trans-a);
+    border-radius   : var(--small-a);
+    background-color: var(--bg-b);
+    border          : var(--brb);
+    color           : var(--fg-b);
+    &:focus {
+        border: var(--brc);
+    }
+
+    &:hover {
+        border: var(--brd);
+    }
+}
+
+.btn {
+    display         : inline-flex;
+    min-width       : fit-content;
+    align-items     : center;
+    justify-content : center;
+
+    &.ok {
+        color: var(--ok-b);
+        border-color: var(--ok-b);
+
+        &.active {
+            color: var(--ok-a);
+            border-color: var(--ok-a);
+        }
+
+        &:hover {
+            color: var(--ok-c);
+            border-color: var(--ok-c);
+        }
+    }
+
+    &.info {
+        color: var(--info-b);
+        border-color: var(--info-b);
+
+        &.active {
+            color: var(--info-a);
+            border-color: var(--info-a);
+        }
+
+        &:hover {
+            color: var(--info-c);
+            border-color: var(--info-c);
+        }
+    }
+
+    &.warn {
+        color: var(--warn-b);
+        border-color: var(--warn-b);
+
+        &.active {
+            color: var(--warn-a);
+            border-color: var(--warn-a);
+        }
+
+        &:hover {
+            color: var(--warn-c);
+            border-color: var(--warn-c);
+        }
+    }
+
+    &.err {
+        color: var(--err-b);
+        border-color: var(--err-b);
+
+        &.active {
+            color: var(--err-a);
+            border-color: var(--err-a);
+        }
+
+        &:hover {
+            color: var(--err-c);
+            border-color: var(--err-c);
+        }
+    }
+
+    &:disabled {
+        color: var(--fg-d);
+        border-color: var(--fg-d);
+
+        &:hover {
+            color: var(--fg-c);
+            border-color: var(--fg-c);
+        }
+    }
+}
+
+.btn-group {
+    overflow        : hidden;
+    display         : flex;
+    flex-wrap       : wrap;
+    align-items     : center;
+    flex-direction  : row;
+    justify-content : flex-start;
+    border-radius   : 3px;
+    border          : 1px solid var(--fg-b);
+    padding         : 0;
+
+    & button {
+        border: none;
+        border-radius: 0;
+        &:not(:first-child) {
+            box-shadow: inset 1px 0 0 var(--fg-b);
+        }
+    }
+}
+

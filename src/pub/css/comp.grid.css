@@ -1,0 +1,42 @@
+.grid-box {
+    height        : 100%;
+    display       : grid;
+    grid-template :
+        "top top" 4rem
+        "side page" 1fr/16rem 1fr;
+
+    .grid.page {
+        grid-area  : page;
+        overflow-y : auto;
+        padding    : 1rem
+    }
+
+    .grid.head {
+        grid-area       : top;
+        padding         : 0 1rem;
+        display         : flex;
+        align-items     : center;
+        flex-direction  : row;
+        justify-content : space-between;
+        box-shadow      : 0 1px 0 var(--br-a);
+        a.logo {
+            font-size: 4em
+        }
+    }
+
+    .grid.side {
+        grid-area: side;
+        box-shadow: 1px 0 0 var(--br-a);
+        a {
+            display         : flex;
+            padding         : 0 1em;
+            line-height     : 3;
+            align-items     : center;
+            justify-content : space-between;
+
+            &:hover {
+                background-color: var(--br-a)
+            }
+        }
+    }
+}

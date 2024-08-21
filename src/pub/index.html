@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="weather-on-wheels">
+    <title>weather-on-wheels</title>
+
+    <link rel="icon" href="/img/favicon.svg" sizes="16" type="image/svg+xml">
+    <link rel=stylesheet href="/css/main.css" type="text/css">
+
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({ key: "API_KEY", v: "weekly" })</script>
+
+    <script type="module">
+        import * as app from '/js/main.js'
+        window.app = app
+        window.onload = app.renderLocations
+    </script>
+
+</head>
+
+<body class="grid-box">
+    <header class="grid head">
+        <a href="#login">login</a>
+    </header>
+
+    <aside class="grid side">
+        <a href="#home">home</a>
+        <a href="#map">map</a>
+        <a href="#create">create</a>
+
+
+        <ul id="locations"/>
+    </aside>
+
+    <main class="grid page">
+        <section class=tabs>
+            <nav>
+                <a href="#map">map</a>
+                <a href="#create">create</a>
+            </nav>
+
+            <div id=map class=tab><h2>map</h2></div>
+
+            <form id=create class=tab>
+
+                <fieldset>
+                    <label for=name>name</label>
+                    <input id=name placeholder=name required/>
+                </fieldset>
+
+                <fieldset>
+                    <label for=lat>lattitude</label>
+                    <input id=lat placeholder=lat required/>
+                </fieldset>
+
+                <fieldset>
+                    <label for=lng>longtitude</label>
+                    <input id=lng placeholder=lng required/>
+                </fieldset>
+
+                <fieldset>
+                    <label for=address>address</label>
+                    <input id=address placeholder=address/>
+                </fieldset>
+
+
+                <fieldset>
+                    <label for=kind>kind</label>
+                    <select id=kind>
+                        <option>place</option>
+                        <option>park</option>
+                        <option>hotel</option>
+                        <option>restaurant</option>
+                    </select>
+                </fieldset>
+                <button id=send class="btn ok">submit</button>
+            </form>
+
+        </section>
+    </main>
+</body>
+</html>

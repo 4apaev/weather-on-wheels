@@ -1,0 +1,29 @@
+* {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box
+}
+
+html {
+    font-feature-settings  : 'tnum';
+    font-variant-ligatures : common-ligatures;
+    font-kerning           : normal;
+    text-rendering         : optimizeLegibility;
+    scroll-behavior        : smooth;
+}
+
+html, body { height    : 100% }
+dialog     { position  : fixed }
+ol, li, ul { list-style: none }
+
+a, button { cursor: pointer; text-decoration: none }
+a, button, form, label, legend, fieldset, input, select, textarea {
+    border      : 0;
+    outline     : 0;
+    line-height : normal;
+    &:focus {
+        outline: none;
+    }
+}
+
+

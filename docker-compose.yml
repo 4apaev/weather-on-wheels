@@ -1,0 +1,65 @@
+version: "3"
+services:
+  db:
+    container_name: db
+    image: postgres:alpine
+    restart: always
+    env_file: ./.env
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/db:${PGDATA}
+    networks:
+      private:
+
+  # backend:
+  #   container_name: backend
+  #   image: backend:latest
+  #   env_file: .env
+  #   build:
+  #     dockerfile: Dockerfile.backend
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 3000:3000
+  #   networks:
+  #     public:
+  #     private:
+  #   volumes:
+  #     - pub:/backend/pub
+  #     - util:/backend/util
+
+  # proxy:
+  #   env_file: .env
+  #   container_name: proxy
+  #   build:
+  #     dockerfile: Dockerfile.nginx
+  #   ports:
+  #     - 80:80
+  #   depends_on:
+  #     - backend
+  #   networks:
+  #     public:
+
+  # pgadmin:
+  #   container_name: pgadmin
+  #   image: dpage/pgadmin4:latest
+  #   restart: always
+  #   env_file: .env
+  #   ports:
+  #     - 5050:80
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     private:
+
+volumes:
+  data-db:
+
+networks:
+  public:
+  private:
+
+
+
+

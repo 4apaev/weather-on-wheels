@@ -1,0 +1,86 @@
+:root {
+  --bg-a: #424e5a;
+  --bg-b: #303841;
+  --bg-c: #272e36;
+  --bg-d: #1f262e;
+
+  --fg-a: #b1c2d5;
+  --fg-b: #adbac7;
+  --fg-c: #727c86;
+  --fg-d: #606b77;
+
+  --br-a: rgba(205, 215, 230, .1);
+  --br-b: rgba(205, 215, 230, .2);
+  --br-c: rgba(205, 215, 230, .3);
+  --br-d: rgba(205, 215, 230, .4);
+
+  --bra: 1px solid var(--br-a);
+  --brb: 1px solid var(--br-b);
+  --brc: 1px solid var(--br-c);
+  --brd: 1px solid var(--br-d);
+
+  --shd-a: rgba(148, 148, 148, .2);
+  --shd-b: rgba(0, 0, 0, .2);
+  --shd-c: rgba(0, 0, 0, .3);
+  --shd-d: rgba(0, 0, 0, .4);
+
+  --shda-y: 0 1px 0 rgba(148, 148, 148, .2);
+  --shdb-y: 0 1px 0 rgba(0, 0, 0, .2);
+  --shdc-y: 0 1px 0 rgba(0, 0, 0, .3);
+  --shdd-y: 0 1px 0 rgba(0, 0, 0, .4);
+
+  --shda-x: 1px 0 0 rgba(148, 148, 148, .2);
+  --shdb-x: 1px 0 0 rgba(0, 0, 0, .2);
+  --shdc-x: 1px 0 0 rgba(0, 0, 0, .3);
+  --shdd-x: 1px 0 0 rgba(0, 0, 0, .4);
+
+  --shda-y-blur: 0 1px var(--small-b) rgba(148, 148, 148, .2);
+  --shdb-y-blur: 0 1px var(--small-b) rgba(0, 0, 0, .2);
+  --shdc-y-blur: 0 1px var(--small-b) rgba(0, 0, 0, .3);
+  --shdd-y-blur: 0 1px var(--small-b) rgba(0, 0, 0, .4);
+
+  --ok-a: #9be9a8;
+  --ok-b: #40c463;
+  --ok-c: #30a14e;
+  --ok-d: #216e39;
+
+  --warn-a: #ffee4a;
+  --warn-b: #ffc501;
+  --warn-c: #fe9600;
+  --warn-d: #ff7b00;
+
+  --err-a: #ff5874;
+  --err-b: #f0415e;
+  --err-c: #df2e4b;
+  --err-d: #cf1938;
+
+  --info-a: #6cb6ff;
+  --info-b: #519ae4;
+  --info-c: #3781ca;
+  --info-d: #2166ac;
+
+  --plum-a: #C878C8;
+  --plum-b: #966496;
+  --plum-c: #895689;
+  --plum-d: #643264;
+
+  --fnt: "IBM Plex Sans Text", sans-serif;
+  --fnt-mono: "IBM Plex Mono text", monospace;
+
+  --sz-a: 12px;
+  --sz-b: 16px;
+  --sz-c: 21px;
+
+  --small-a: 3px;
+  --small-b: 5px;
+
+  --trans-quater: all .25s;
+  --trans-third: all .3s;
+  --trans-half: all .5s;
+
+  --cpa: #D97FCD;
+  --cpb: #89568C;
+  --cpc: #663a65;
+
+  --gr: linear-gradient(0deg, var(--cpa) 20%, var(--cpb) 100%);
+}
